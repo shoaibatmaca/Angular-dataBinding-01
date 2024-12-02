@@ -1,0 +1,79 @@
+
+<h3>This is a heading</h3>
+
+<div class="row">
+  <div class="col-4">
+    One way data binding
+
+  </div>
+
+  <div class="col-4"></div>
+  <div class="col-4"></div>
+</div>
+
+
+<div class="row">
+  <div class="col-5">
+    <div class="row">
+      <div class="col-4">
+        <!-- interpolation curly braces with a var name that declare in ts file to access/ bind data -->
+        {{courseName}} //
+        <div>{{inputType}}</div>
+        <!-- <input type="text" value="{{courseName}}" placeholder="Enter Text"  /> -->
+        <input type="text" [value]="courseName" placeholder="Enter Text"  />
+        <input type="{{inputType}}" />
+      </div>
+      <div class="col-4 m-20">
+        <!-- property binding -dynamically bind a property of an element to a value in the component -->
+        <!-- <div class="bg-danger">danger </div> -->
+        <!-- <div class="{{myClassName}}">danger </div> -->
+        <div [class]="myClassName">danger </div>
+        <input type="text" value="{{courseName}}"/>
+
+      </div>
+      <div class="col-3">
+        <button class="btn btn-success" (click)="showAlert('welcome angular 19')">show welcome</button>
+        <span class="ms-4 bg-primary p-1" (click)="showAlert('click from span')">span click it </span>
+        <button class="btn btn-primary mt-4" (click)="changeCourseName()">Course Name</button>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <div class="col-3">
+    <!-- <button class="btn btn-success" (click)="showAlert('welcome angular 19')">show welcome</button>
+    <span class="ms-4 bg-primary p-1" (click)="showAlert('click from span')">span click it </span>
+    <button class="btn btn-primary mt-4" (click)="changeCourseName()">Course Name</button> -->
+
+    <!-- Two way data binding ngModel -->
+
+    <input type="text" [(ngModel)]="courseName"/> -{{courseName}}
+    <!-- ap input se check krein text change ker k to wo sabi m change ho ga aesa q? -->
+    <!-- is se ng model se to yaha py change baqi sabi se change isliye ho raha q k property binding se wo value get ho rai isliye -->
+
+
+    <select [(ngModel)]="stateName">
+      <option value="">Select</option>
+      <option value="Punjab">Punjab</option>
+      <option value="Baltistan">Baltistan</option>
+      <option value="Sindh">Sindh</option>
+      <option value="Sarhad">Sarhad</option>
+      <option value="KPK">KPK</option>
+    </select>
+
+
+  </div>
+
+  <div class="col-4">
+
+
+<h3>{{firstName()}}</h3>
+
+
+  </div>
+
+</div>
+
+
